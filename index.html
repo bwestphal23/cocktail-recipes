@@ -1,17 +1,83 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cocktail Recipes</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Spirited Kitchen</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1>Cocktail Recipes</h1>
-<ul>
-<li><a href="rusty-nail.html">Rusty Nail</a></li>
-<li><a href="bronx-cheer.html">Bronx Cheer</a></li>
-<li><a href="bobby-burns.html">Bobby Burns</a></li>
-</ul>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>The Spirited Kitchen</h1>
+  </header>
+
+  <!-- Featured Cocktails -->
+  <section class="featured-cocktails">
+    <h2>Featured Cocktails</h2>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <h3>Cocktail 1</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </div>
+      <div class="featured-card">
+        <h3>Cocktail 2</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </div>
+      <div class="featured-card">
+        <h3>Cocktail 3</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters / Search -->
+  <section class="filters">
+    <select id="filter-category">
+      <option value="">All Categories</option>
+      <option value="Classic">Classic</option>
+      <option value="Tiki">Tiki</option>
+      <option value="Modern">Modern</option>
+    </select>
+
+    <select id="filter-spirit">
+      <option value="">All Spirits</option>
+      <option value="Vodka">Vodka</option>
+      <option value="Gin">Gin</option>
+      <option value="Whiskey">Whiskey</option>
+      <!-- Add more as needed -->
+    </select>
+
+    <input type="text" id="search-input" placeholder="Search cocktails…">
+  </section>
+
+  <!-- Main Grid -->
+  <section class="all-cocktails">
+    <h2>All Cocktails</h2>
+    <div class="cocktail-grid" id="cocktail-grid">
+      <!-- Placeholder cards -->
+      <div class="cocktail-card" data-name="Bronx Cheer" data-category="Classic" data-spirit="Whiskey">
+        <h3>Bronx Cheer</h3>
+        <p>Whiskey</p>
+        <span class="category">Classic</span>
+      </div>
+      <div class="cocktail-card" data-name="Bobby Burns" data-category="Classic" data-spirit="Whiskey">
+        <h3>Bobby Burns</h3>
+        <p>Whiskey</p>
+        <span class="category">Classic</span>
+      </div>
+      <div class="cocktail-card" data-name="Rusty Nail" data-category="Classic" data-spirit="Whiskey">
+        <h3>Rusty Nail</h3>
+        <p>Whiskey</p>
+        <span class="category">Classic</span>
+      </div>
+      <!-- Add more dynamically later -->
+    </div>
+  </section>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
