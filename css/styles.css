@@ -1,4 +1,4 @@
-/* Basic reset */
+/* ===== Reset & Base Styles ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,7 @@ body {
   padding: 1rem;
 }
 
-/* Header */
+/* ===== Header ===== */
 .site-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -24,32 +24,48 @@ body {
   font-weight: bold;
 }
 
-/* Featured */
+/* ===== Featured Cocktails ===== */
 .featured-cocktails h2 {
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .featured-card {
+  display: block;
   background-color: #2a2a2a;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.featured-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-card p,
+.featured-card .category {
+  font-size: 1rem;
+  color: #ccc;
 }
 
 .featured-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+  background-color: #333;
 }
 
-/* Filters */
+/* ===== Filters / Search ===== */
 .filters {
   display: flex;
   gap: 1rem;
@@ -60,13 +76,19 @@ body {
 
 .filters select,
 .filters input {
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
   border: none;
   min-width: 150px;
+  font-size: 1rem;
 }
 
-/* Main Grid */
+/* ===== Main Grid ===== */
+.all-cocktails h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
 .cocktail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -74,23 +96,60 @@ body {
 }
 
 .cocktail-card {
+  display: block;
   background-color: #2a2a2a;
   padding: 1rem;
-  border-radius: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cocktail-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 .cocktail-card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
 }
 
 .cocktail-card p,
 .cocktail-card .category {
   font-size: 0.9rem;
   color: #ccc;
+}
+
+.cocktail-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  background-color: #333;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .cocktail-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters select,
+  .filters input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .cocktail-card h3 {
+    font-size: 1.1rem;
+  }
 }
