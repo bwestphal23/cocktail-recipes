@@ -1,3 +1,18 @@
+:root {
+  --bg-main: #F6F1EA;
+  --bg-card: #FFFFFF;
+
+  --text-main: #1F1F1F;
+  --text-muted: #6E6A66;
+
+  --accent-primary: #B08D57;
+  --accent-primary-hover: #8E7244;
+  --accent-secondary: #4F5D4A;
+
+  --border-subtle: #E1DCD5;
+  --bg-hover: #FBF7F2;
+}
+
 /* ===== Reset & Base Styles ===== */
 * {
   box-sizing: border-box;
