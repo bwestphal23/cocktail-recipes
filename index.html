@@ -1,17 +1,123 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cocktail Recipes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Spirited Kitchen</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1>Cocktail Recipes</h1>
-<ul>
-<li><a href="rusty-nail.html">Rusty Nail</a></li>
-<li><a href="bronx-cheer.html">Bronx Cheer</a></li>
-<li><a href="bobby-burns.html">Bobby Burns</a></li>
-</ul>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <h1>The Spirited Kitchen</h1>
+  </header>
+
+  <!-- ===== Featured Cocktails ===== -->
+  <section class="featured-cocktails">
+    <h2>Featured Cocktails</h2>
+    <div class="featured-grid">
+      <!-- Example featured cards (you can override in GitHub or dynamically generate) -->
+      <a href="#" class="featured-card">
+        <h3>Featured Cocktail 1</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </a>
+      <a href="#" class="featured-card">
+        <h3>Featured Cocktail 2</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </a>
+      <a href="#" class="featured-card">
+        <h3>Featured Cocktail 3</h3>
+        <p>Base Spirit</p>
+        <span class="category">Category</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Filters / Search ===== -->
+  <section class="filters">
+    <input type="text" id="search-input" placeholder="Search cocktails by name...">
+    <select id="category-filter">
+      <option value="">All Categories</option>
+      <option value="Classic">Classic</option>
+      <option value="Modern">Modern</option>
+      <option value="Tiki">Tiki</option>
+      <!-- Add more as needed -->
+    </select>
+    <select id="spirit-filter">
+      <option value="">All Base Spirits</option>
+      <option value="Whiskey">Whiskey</option>
+      <option value="Gin">Gin</option>
+      <option value="Rum">Rum</option>
+      <option value="Tequila">Tequila</option>
+      <!-- Add more as needed -->
+    </select>
+  </section>
+
+  <!-- ===== Main Cocktail Grid (Generated) ===== -->
+  <section class="all-cocktails">
+    <h2>All Cocktails</h2>
+    <div class="cocktail-grid" id="cocktail-grid">
+      
+<a href="bobby-burns.html" class="cocktail-card" data-name="Bobby Burns" data-category="Stirred" data-spirit="Whiskey">
+  <h3>Bobby Burns</h3>
+  <p>Whiskey</p>
+  <span class="category">Stirred</span>
+</a>
+
+<a href="bronx-cheer.html" class="cocktail-card" data-name="Bronx Cheer" data-category="Shaken" data-spirit="Whiskey">
+  <h3>Bronx Cheer</h3>
+  <p>Whiskey</p>
+  <span class="category">Shaken</span>
+</a>
+
+<a href="rusty-nail.html" class="cocktail-card" data-name="Rusty Nail" data-category="Stirred" data-spirit="Whiskey">
+  <h3>Rusty Nail</h3>
+  <p>Whiskey</p>
+  <span class="category">Stirred</span>
+</a>
+
+    </div>
+  </section>
+
+  <!-- ===== Optional Footer ===== -->
+  <!-- <footer>
+    <p>&copy; 2026 The Spirited Kitchen</p>
+  </footer> -->
+
+  <!-- ===== Filter/Search Script ===== -->
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const categoryFilter = document.getElementById('category-filter');
+    const spiritFilter = document.getElementById('spirit-filter');
+    const cards = document.querySelectorAll('.cocktail-card');
+
+    function filterCocktails() {
+      const search = searchInput.value.toLowerCase();
+      const category = categoryFilter.value.toLowerCase();
+      const spirit = spiritFilter.value.toLowerCase();
+
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const cardCategory = (card.dataset.category || '').toLowerCase();
+        const cardSpirit = (card.dataset.spirit || '').toLowerCase();
+
+        if (
+          (search && !name.includes(search)) ||
+          (category && cardCategory !== category) ||
+          (spirit && cardSpirit !== spirit)
+        ) {
+          card.style.display = 'none';
+        } else {
+          card.style.display = 'block';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterCocktails);
+    categoryFilter.addEventListener('change', filterCocktails);
+    spiritFilter.addEventListener('change', filterCocktails);
+  </script>
 </body>
 </html>
